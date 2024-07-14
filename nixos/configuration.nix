@@ -80,8 +80,8 @@
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "au";
-    xkbVariant = "";
+    xkb.layout = "au";
+    xkb.variant = "";
   };
 
   # Enable CUPS to print documents.
@@ -160,6 +160,7 @@
 
 
     ### Programming Languages -----------------------------------
+    bash
     nodejs_22 
     python3
     python312Packages.pip
@@ -170,6 +171,7 @@
     clang
     jdk
     jetbrains.rider
+    dotnet-sdk
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
