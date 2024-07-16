@@ -143,13 +143,15 @@
     tigervnc
   #  wget
     ### CLI TOOLS -----------------------------------------------
-    fzf
+    fzf # fuzzy finder
+    fd # replace fzf command with this
     neovim 
     tmux
     yazi # file manager
     bottom # top alternative
     zoxide # cd alternative
     bat # cat alternative
+    delta
     eza # ls alternative
     thefuck # fix typos
     tldr # man alternative
