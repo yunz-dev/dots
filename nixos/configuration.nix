@@ -53,10 +53,25 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
+  fonts.packages = with pkgs; [
+  nerdfonts
+  noto-fonts
+  noto-fonts-cjk
+  noto-fonts-emoji
+  liberation_ttf
+  fira-code
+  fira-code-symbols
+  mplus-outline-fonts.githubRelease
+  dina-font
+  proggyfonts
+];
+
   #Enable zsh 
   ## for global user
   users.defaultUserShell=pkgs.zsh; 
+  environment.shells = with pkgs;  [zsh ];
   # enable zsh and oh my zsh
+
   programs = {
      zsh = {
         enable = true;
@@ -111,6 +126,7 @@
     isNormalUser = true;
     description = "yunz";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -125,6 +141,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    foot
+    alacritty
     obsidian
     pkgs.gnome3.gnome-tweaks
     pkgs.home-manager
