@@ -9,7 +9,6 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -33,6 +32,10 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_AU.UTF-8";
+
+
+
+
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_AU.UTF-8";
@@ -65,6 +68,9 @@
   dina-font
   proggyfonts
 ];
+
+
+
 
   #Enable zsh 
   ## for global user
@@ -162,6 +168,7 @@
   #  wget
     ### CLI TOOLS -----------------------------------------------
     fzf # fuzzy finder
+    lazygit
     fd # replace fzf command with this
     neovim 
     tmux
@@ -184,13 +191,18 @@
     nodejs_22 
     python3
     python312Packages.pip
-    rustc
+
+#    rustc
+#    pkg-config
     rustup
-    cargo
+#    cargo
+#    openssl
+#    openssl.dev
+
     gcc
     clang
     jdk
-    jetbrains.rider
+    # jetbrains.rider
     dotnet-sdk
   ];
 
@@ -221,4 +233,12 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
 
+#environment.variables = {
+#    OPENSSL_DIR = "${pkgs.openssl.dev}";
+#    PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
+#    OPENSSL_LIB_DIR = "${pkgs.openssl.dev}/lib";
+#    OPENSSL_INCLUDE_DIR = "${pkgs.openssl.dev}/include";
+#  };
+
 }
+
