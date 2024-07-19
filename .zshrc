@@ -4,6 +4,7 @@ path+=~/.cargo/bin
 # ALIAS
 alias vi="nvim"
 alias vim="nvim"
+source ~/scripts/secrets/ssh.sh
 
 # EXPORT
 export EDITOR=nvim
@@ -71,6 +72,7 @@ source ~/scripts/fzf-git.sh
 
 # Bat (like cat) ---------------------------------
 export BAT_THEME="Catppuccin Mocha"
+alias cat="bat"
 # -------------------------------------
 #
 # Eza (better cat) ------------------------
