@@ -5,8 +5,11 @@ Repository containing my dot files and system files
 ## Dependencies
 
 ### Git
+clone and version control
 ### Stow
-
+needed to create symlinks
+### Zsh
+add `ssh.sh` to `scripts/secrets/` for custom ssh alias'
 ## Installation
 
 Clone the reposity in your $HOME directory
@@ -28,6 +31,8 @@ when making changes:
 ```bash
 `~/scripts/INSERT_NIXOS_SCRIPT_HERE`
 ```
+
+TODO: custom nix shell scripts under scripts dir
 
 
 
