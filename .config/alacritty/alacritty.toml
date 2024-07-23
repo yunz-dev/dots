@@ -7,5 +7,6 @@ import = [
 ]
 
 [font]
-#normal= {family = "JettBrainsMono", style="Regular"}
+normal= {family = "JetBrainsMonoNFM", style="Regular"}
 size=14
+
