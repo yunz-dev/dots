@@ -1,71 +1,110 @@
 {
-    "layer": "top", // Waybar at top layer
-    "position": "top", // Waybar position (top|bottom|left|right)
-    // "width": 1280, // Waybar width
-    // Choose the order of the modules
-    "modules-left": ["wlr/workspaces"],
-    "modules-center": ["custom/music"],
-    "modules-right": ["pulseaudio", "backlight", "battery", "clock", "tray", "custom/lock", "custom/power"],
-    "wlr/workspaces": {
+    "layer": "top",
+    "position": "top",
+    "height": 23,
+    "margin-top": 5,
+    "margin-bottom": 0,
+    "margin-right": 20,
+    "margin-left": 20,
+    "modules-left": ["custom/logo", "wlr/workspaces"],
+    "modules-center": ["clock#1", "clock#2", "clock#3"],
+    "modules-right": ["wireplumber", "memory", "cpu", "tray"],
+
+    "custom/logo": {
+        "format": "",
+        "tooltip": false
+    },
+
+     "wlr/workspaces": {
          "disable-scroll": true,
-         "sort-by-name": true,
-         "format": " {icon} ",
+         "on-click": "activate",
+         "sort-by-number": true,
+         "format": "{name}",
+         "on-scroll-up": "hyprctl dispatch workspace m-1 > /dev/null",
+         "on-scroll-down": "hyprctl dispatch workspace m+1 > /dev/null",
          "format-icons": {
-             "default": "",
+             "1": "<span size='8.4pt'>一</span>",
+             "2": "<span size='8.4pt'>二</span>",
+             "3": "<span size='8.4pt'>三</span>",
+             "4": "<span size='8.4pt'>四</span>",
+             "5": "<span size='8.4pt'>五</span>",
+             "6": "<span size='8.4pt'>六</span>",
+             "7": "<span size='8.4pt'>七</span>",
+             "8": "<span size='8.4pt'>八</span>",
+             "9": "<span size='8.4pt'>九</span>",
          },
+         "persistent_workspaces": {
+             "1": ["DP-3"],
+             "2": ["DP-3"],
+             "3": ["DP-3"],
+             "4": ["DP-3"],
+             "5": ["DP-3"],
+             "6": ["HDMI-A-1"],
+             "7": ["HDMI-A-1"],
+             "8": ["HDMI-A-1"],
+             "9": ["HDMI-A-1"],
+             "10": ["HDMI-A-1"],
+         }
      },
-    "tray": {
-        "icon-size": 21,
-        "spacing": 10
+
+    "network": {
+        "format": "󰖩",
+        "format-disconnected": "󰖪",
+        "format-disabled": "󰖪",
+        "tooltip-format": "󰖩 {essid} {ipaddr}",
+        "tooltip-format-disconnected": "󰖪",
     },
-    "custom/music": {
-        "format": "  {}",
-        "escape": true,
-        "interval": 5,
-        "tooltip": false,
-        "exec": "playerctl metadata --format='{{ title }}'",
-        "on-click": "playerctl play-pause",
-        "max-length": 50
+
+    "clock#1": {
+        "format": "{:󰃶 %A}",
+        "tooltip": false
     },
-    "clock": {
-        "timezone": "Asia/Dubai",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": " {:%d/%m/%Y}",
-        "format": " {:%H:%M}"
+    "clock#2": {
+        "interval": 1,
+        "format": "{:󰅐 %r}",
+        "tooltip": false
     },
-    "backlight": {
-        "device": "intel_backlight",
-        "format": "{icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    "clock#3": {
+        "format": "{: %d.%m.%y}",
+        "tooltip": false
     },
+
+    "wireplumber": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟",
+        "scroll-step": 5,
+        "on-click": "pactl set-sink-mute 0 toggle",
+        "on-click-right": "qpwgraph",
+        "format-icons": [
+            "",
+            "",
+            ""
+        ]
+    },
+
+    "memory": {
+        "interval": 30,
+        "format": "{}% "
+    },
+
+    "cpu": {
+        "interval": 30,
+        "format": "{usage}% 󰍛",
+    },
+
     "battery": {
         "states": {
-            "warning": 30,
-            "critical": 15
+            "high": 100,
+            "normal": 79,
+            "low": 20,
         },
-        "format": "{icon}",
-        "format-charging": "",
-        "format-plugged": "",
-        "format-alt": "{icon}",
-        "format-icons": ["", "",  "", "", "", "", "", "", "", "", "", ""]
+        "format": "{capacity}% {icon} ",
+        "format-icons": ["", "", "", "", ""]
     },
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{icon} {volume}%",
-        "format-muted": "",
-        "format-icons": {
-            "default": ["", "", " "]
-        },
-        "on-click": "pavucontrol"
-    },
-    "custom/lock": {
-        "tooltip": false,
-        "on-click": "sh -c '(sleep 0.5s; swaylock --grace 0)' & disown",
-        "format": "",
-    },
-    "custom/power": {
-        "tooltip": false,
-        "on-click": "wlogout &",
-        "format": "襤"
+
+    "tray": {
+        "icon-size": 15,
+        "spacing": 6
     }
 }
+
