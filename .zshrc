@@ -9,6 +9,10 @@ source ~/scripts/secrets/ssh.sh
 # EXPORT
 export EDITOR=nvim
 
+
+# Fastfetch
+alias neofetch="fastfetch"
+
 # Fuzzy Finder ------------------------
 # Keybinds
 # '** + TAB' fzf for cli argument
