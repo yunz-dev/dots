@@ -45,11 +45,11 @@
 #waybar {
     color: @text;
     background: @base;
-    border-radius: 8px;
+    /* border-radius: 8px; */
 }
 
 #workspaces button {
-    margin: 2px 0;
+    margin: 5px 0;
     padding: 0 3px;
 }
 
