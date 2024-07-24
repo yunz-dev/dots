@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
 
 # initialise wallpaper
-# swww init &
+swww init &
 # set wallpaper
-# swww img URLHERE &
+swww img ~/Downloads/wallpaper.jpg &
 #
-
-
 nm-applet --indicator &
 
 waybar &
