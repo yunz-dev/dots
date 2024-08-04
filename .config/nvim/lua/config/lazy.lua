@@ -23,6 +23,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.rust" },
     { import = "lazyvim.plugins.extras.lang.java" },
     { import = "lazyvim.plugins.extras.test.core" },
+    -- TODO: make sure DAP works for rust, typescript and java
     { import = "lazyvim.plugins.extras.dap.core" },
     -- { import = "lazyvim.plugins.Colorscheme.catppuccin" },
     { import = "lazyvim.plugins.extras.ui.mini-animate" },
