@@ -136,6 +136,8 @@
   wl-clipboard
   themechanger
   grimblast
+# theme for zsh
+  oh-my-posh
 
 
   # Applications
