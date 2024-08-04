@@ -9,6 +9,9 @@ source ~/scripts/secrets/ssh.sh
 # EXPORT
 export EDITOR=nvim
 
+# oh-my-posh: zsh theme -------------
+eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/base.toml)"
+
 
 # Fastfetch
 alias neofetch="fastfetch"
