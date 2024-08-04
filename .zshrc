@@ -96,3 +96,7 @@ eval "$(zoxide init zsh)"
 
 alias cd="z"
 # ----------------------------
+#
+# direnv ---------------------
+eval "$(direnv hook zsh)"
+
