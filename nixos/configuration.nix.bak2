@@ -24,67 +24,6 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  #Nix Flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  #ZSH
-  users.defaultUserShell=pkgs.zsh;
-	programs = {
-	   zsh = {
-	      enable = true;
-	      autosuggestions.enable = true;
-	      zsh-autoenv.enable = true;
-	      syntaxHighlighting.enable = true;
-	      ohMyZsh = {
-		 enable = true;
-		 theme = "robbyrussell";
-		 plugins = [
-		   "git"
-		   "npm"
-		   "history"
-		   "node"
-		   "rust"
-		   "deno"
-		 ];
-	      };
-	   };
-	};
-
-# fonts
-  fonts.packages = with pkgs; [
-  nerdfonts
-  noto-fonts
-  noto-fonts-cjk
-  noto-fonts-emoji
-  liberation_ttf
-  fira-code
-  fira-code-symbols
-  mplus-outline-fonts.githubRelease
-  dina-font
-  proggyfonts
-];
-  # Hyprland
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
-
-  #portals for screensharing 
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  
-  #enable sound with pipewire
-  sound.enable = true;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
-  };
-
-
   # Set your time zone.
   time.timeZone = "Australia/Sydney";
 
@@ -112,7 +51,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.yunz = {
     isNormalUser = true;
-    description = "Yunus";
+    description = "yunz";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
   };
@@ -123,113 +62,11 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  # Hyprland Stuff
-  (waybar.overrideAttrs (oldAttrs: {
-  mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true"];
-  })
-  )
-  dunst #notifcation daemon
-  libnotify #notification dependancy
-  swww #wallpaper
-  rofi-wayland #app finder
-  networkmanagerapplet
-  wl-clipboard
-  themechanger
-  grimblast
-
-
-  # Applications
-  kitty
-  alacritty
-  firefox
-  obsidian
-  vesktop
-  mpv
-  pavucontrol
-  gnome.nautilus
-
-  # Fetch
+  neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+  #  wget
   git
-  wget
-  curl
-  sshfs
-  unzip
-
-  # CLI applications
-  neovim
-  bat # better cat
-  fastfetch #neofetch
-  fzf #fuzzyfinder
-  fd # assist fzf
-  eza #ls
-  thefuck #typo
-  zoxide #cd
-  yazi
-  tmux
-  delta
-  tldr
-  stow
-  tree
-  lazygit
-  bottom
-  ripgrep # for telescope
-
-
-  # compilers/DEV
-  gcc
-  clang
-  gnumake
-  direnv
-  # DEV
-  # gnumake
-  # # rust
-  # rustup
-  cargo
-  rustc
-  rust-analyzer
-  # gcc
-  # clang
-
-  # ## Java
-  jetbrains.idea-ultimate
-  jdk
-  maven
-
-  # ## C#
-  # jetbrains.rider
-  # dotnetCorePackages.sdk_9_0
-
-  # #JS
-  nodejs
-  # 
-  # # python
-  python312Packages.pip
-  python3
-
-
   ];
-  
-# services.printing = {
-#     enable = true;
-#     drivers = [ pkgs.gutenprint pkgs.hplip ]; # Include any necessary drivers
-#     ppdFiles = [
-#       {
-#         name = "my_printer";
-#         path = "/etc/cups/ppd/Sharp-BP-70M45-ps.ppd";
-#       }
-#     ];
-#   };
 
-  services.printing = {
-    enable = true;
-    drivers = [ pkgs.gutenprint ];
-  };
-
-services.avahi = {
-  enable = true;
-  nssmdns = true;
-  openFirewall = true;
-};
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
