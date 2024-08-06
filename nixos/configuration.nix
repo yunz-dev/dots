@@ -138,6 +138,8 @@
   grimblast
 # theme for zsh
   oh-my-posh
+# stuff for remapping keys
+kanata
 
 
   # Applications
@@ -188,7 +190,12 @@
   # rustup
   cargo
   rustc
+  clippy
   rust-analyzer
+  # test and coder checker
+  bacon
+  # repl for rust
+  evcxr
   # gcc
   # clang
 
