@@ -177,6 +177,7 @@ kanata
   lazygit
   bottom
   ripgrep # for telescope
+  lldb_18 # debugger
 
 
   # compilers/DEV
