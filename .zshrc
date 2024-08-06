@@ -103,3 +103,5 @@ alias cd="z"
 # direnv ---------------------
 eval "$(direnv hook zsh)"
 
+# MISC ALIAS
+alias nix-curr-gen="echo `readlink /nix/var/nix/profiles/system | cut -d- -f2`"
