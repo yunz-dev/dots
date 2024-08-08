@@ -105,3 +105,4 @@ eval "$(direnv hook zsh)"
 
 # MISC ALIAS
 alias nix-curr-gen="echo `readlink /nix/var/nix/profiles/system | cut -d- -f2`"
+alias nix-list-gen="sudo nix-env --list-generations --profile /nix/var/nix/profiles/system"
