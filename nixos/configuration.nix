@@ -117,6 +117,23 @@
     packages = with pkgs; [];
   };
 
+  users.users.cloudflared = {
+    group = "cloudflared";
+    isSystemUser = true;
+  };
+  users.groups.cloudflared = { };
+
+  systemd.services.my_tunnel = {
+    wantedBy = [ "multi-user.target" ];
+    after = [ "network.target" ];
+    serviceConfig = {
+      ExecStart = "${pkgs.cloudflared}/bin/cloudflared tunnel --no-autoupdate run --token=<token>";
+      Restart = "always";
+      User = "cloudflared";
+      Group = "cloudflared";
+    };
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -158,6 +175,8 @@ kanata
   curl
   sshfs
   unzip
+  #self hosting
+  cloudflared
 
   # CLI applications
   neovim
