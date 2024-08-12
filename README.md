@@ -10,9 +10,11 @@ clone and version control
 needed to create symlinks
 ### Zsh
 add `ssh.sh` to `scripts/secrets/` for custom ssh alias'
+### Hyprland
+run `chmod +x start.sh` in `hypr` directory
 ## Installation
 
-Clone the reposity in your $HOME directory
+Clone the repository in your $HOME directory
 ```
 $ git clone git@github.com:yunz-dev/dots.github
 $ cd dots
