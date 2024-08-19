@@ -12,7 +12,13 @@ needed to create symlinks
 add `ssh.sh` to `scripts/secrets/` for custom ssh alias'
 ### Hyprland
 run `chmod +x start.sh` in `hypr` directory
+### Tmux
+install tpm
+`git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
+`tmux source ~/.config/tmux/tmux.conf`
+<prefix> + I
 ## Installation
+
 
 Clone the repository in your $HOME directory
 ```
