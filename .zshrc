@@ -1,17 +1,21 @@
 # PATH
 path+=~/.cargo/bin
+path+=($HOME/.nix-profile/bin)
 
 # ALIAS
 alias vi="nvim"
 alias vim="nvim"
 source ~/scripts/secrets/ssh.sh
 
+# tmuxify
+alias t="~/dots/scripts/tmuxify.sh"
+
 # EXPORT
 export EDITOR=nvim
 
 # oh-my-posh: zsh theme -------------
-eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/base.toml)"
-
+# eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/base.toml)"
+eval "$(starship init zsh)"
 
 # Fastfetch
 alias neofetch="fastfetch"
