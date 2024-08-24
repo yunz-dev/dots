@@ -24,6 +24,8 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.java" },
     { import = "lazyvim.plugins.extras.lang.go" },
     { import = "lazyvim.plugins.extras.editor.harpoon2" },
+    { import = "lazyvim.plugins.extras.coding.copilot" },
+    { import = "lazyvim.plugins.extras.coding.copilot-chat" },
     -- { import = "lazyvim.plugins.extras.lang.haskell" },
     -- { import = "lazyvim.plugins.extras.lang.python" },
     { import = "lazyvim.plugins.extras.test.core" },
