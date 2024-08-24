@@ -155,6 +155,7 @@
   grimblast
 # theme for zsh
   oh-my-posh
+  starship
 # stuff for remapping keys
 kanata
 
@@ -168,6 +169,8 @@ kanata
   mpv
   pavucontrol
   gnome.nautilus
+  postman
+  insomnia
 
   # Fetch
   git
@@ -218,10 +221,12 @@ kanata
   evcxr
   # gcc
   # clang
+  go
 
   # ## Java
   jetbrains.idea-ultimate
-  jdk
+  jdk17
+  #jdk
   maven
 
   # ## C#
